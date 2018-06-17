@@ -11,6 +11,7 @@
         }
         document.body.style['margin-top']="50px";
         function translate() {var element = document.createElement('script');element.id = 'outfox_seed_js';element.charset = 'utf-8';element.setAttribute('src', 'http://fanyi.youdao.com/web2/seed.js?' + Date.parse(new Date()));document.body.appendChild(element);}
+        translate();
         document.getElementById("k").onkeyup = function(){
             document.getElementById("t").innerHTML=document.getElementById("k").value.replace("<", "< ").replaceAll("\n","<br>");
             var parent = document.getElementsByTagName('body')[0];
