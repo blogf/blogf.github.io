@@ -1,0 +1,78 @@
+/* 整个菜单，放在左侧 */
+#menu {
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 99999;
+    background: #000000;
+    line-height: 1.9;
+    letter-spacing: 0.1em;
+}
+
+.menu-heading, .menu-link {
+    display: block;
+    /* 去除超链接下划线 */
+    text-decoration: none;
+}
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 最上面那个“网络学堂”字 */
+#menu .menu-heading {
+    font-size: 150%;
+    font-weight: 300;
+    /* 为啥letter-spacing不继承啊 */
+    letter-spacing: 0.1em;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0.5em 0.4em;
+}
+
+#menu .menu-item a:hover {
+    background-color: #444;
+}
+#menu a {
+    color: #aaa;
+    border: none;
+    padding: 0.625em 1em;
+}
+
+#menu .menu-divider {
+    border-top: 1px solid #333;
+}
+
+/* 选中变个颜色 */
+#menu .menu-selected {
+    background: #1195ee;
+}
+/* 换个对比度的颜色 */
+#menu .menu-selected a {
+    color: #fff;
+}
+/* 选中的时候，放上鼠标颜色改一下 */
+/* 但是必须加在a上面……但理论上不应该都可以加吗 */
+#menu .menu-selected a:hover {
+    background: #4db6fc;
+}
+
+/* 翻译选项，放在左下角 */
+#translator {
+    text-align: center;
+    z-index: 999999;
+    position: absolute;
+    bottom: 10px;
+    background-color: #222;
+    width: 100%;
+    color: #fff;
+}
+
+#translator a{
+    color: #fff;
+    text-decoration: none;
+}

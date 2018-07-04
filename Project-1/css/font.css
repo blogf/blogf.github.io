@@ -1,0 +1,5 @@
+/* 一个挺好看的英文字体，但googleapis不翻墙访问挺慢的……就不用了吧 */
+/* <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> */
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}

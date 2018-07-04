@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>网络学堂</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="css/font.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="css/menu.css" />
+  <script src="js/data.js"></script>
+  <script src="js/vue.min.js"></script>
+  <!-- <script src="js/vue.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script> -->
+  <script src="js/vue-i18n.js"></script>
+  <script src="js/i18n.js"></script>
+</head>
+<body>
+  <div id="app">
+    <study-menu selected='courses'></study-menu>
+    <div id="main">
+      <study-header title="studyRoom"></study-header>
+      <study-courses></study-courses>
+    </div>
+    <study-footer></study-footer>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>

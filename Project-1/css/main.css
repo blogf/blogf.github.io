@@ -1,0 +1,132 @@
+body {
+  font-weight: 100;
+}
+
+#main {
+  /* 比菜单的宽度稍大一点 */
+  padding-left: 210px;
+  /* 如果显示器太宽，就在右边居中 */
+  max-width: 1200px;
+  margin: 0 auto;
+  /* 留下页脚的位置 */
+  padding-bottom: 90px;
+}
+
+.header {
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  letter-spacing: 0.05em;
+}
+
+h1 {
+  /* font-weight: 200; */
+  font-size: 300%
+}
+
+/* 为了能够居中还得加这个东西……好烦 */
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+footer a:visited {
+  color: #000;
+}
+
+.footer {
+  position: absolute;
+  text-align: center;
+  /* 居个中好麻烦…… */
+  padding-left: 100px;
+  width: 100%;
+  height: 60px;
+  bottom: 0px;
+  background: #f7f7f7;
+  padding-top: 10px;
+  border-top: 1px solid #aaa;
+}
+
+table {
+  width: 100%;
+  border: 1px solid #cbcbcb;
+  line-height: 3;
+  /* 紧凑一点，不要出现中间的白线 */
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background-color: #e0e0e0;
+  /* 网络学堂自己并没有左对齐……但觉得不好 */
+  text-align: left;
+}
+
+tr {
+  border: 1px solid #cbcbcb;
+}
+
+th, td {
+  min-width: 100px
+}
+
+.notice-content {
+  line-height: 1.4
+}
+
+button {
+  border-radius: 6px;
+  background: #1195ee;
+  font-size: 120%;
+  padding: 0.6em 2em;
+  color: #fff;
+  border: transparent;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+button:hover {
+  background: #4db6fc;
+}
+
+#buttoncontainer {
+  text-align: center;  
+}
+
+.linker {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.tags {
+  background: #e0e0e0;
+  padding: 0.4em 1em;
+  color: #000;
+  margin-top: 20px;
+  border: 1px solid #555;
+}
+
+.tags:hover {
+  background: #ccc;
+  color: #000
+}
+
+.selected {
+  background: #999;
+  color: #fff
+}
+
+.selected:hover {
+  background: #bbb;
+  color: #fff
+}
+
+.no-margin-top {
+  margin-top: 0;
+}
+
+.courses {
+  line-height: 3.5;
+  font-size: 160%;
+}

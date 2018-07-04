@@ -1,0 +1,98 @@
+Web 前端技术实训课程，2018 年 7 月
+
+作为小学期课程，Web 前端技术实训课程具有很强的实践性。课程实验，特别是综合实验，对源代码管理、线上部署、前端工程化都有要求。
+
+本文中粗体字部分值得注意，其余部分多为科普或建议性质，供同学们参考。
+
+目录：
+开发环境——本地开发环境与调试工具
+源码管理——基于 git 与 GitHub 的版本控制与团队协作
+构建工具——前端工程化
+线上部署——在 Linux 服务器上部署 Web 应用
+产品发布——在微信公众平台发布小游戏
+开发环境
+同学们在自己的电脑上进行开发、调试，工具有多种选择。浏览器 Google Chrome 提供强大的调试功能（F12 DevTools）。也可只用文本编辑器，如 VS Code，按需要安装相应调试插件。
+
+如果使用集成开发环境（IDE），我们推荐 WebStorm（https://www.jetbrains.com/webstorm/）。有 30 日免费试用，也可凭学生身份向开发商 JetBrains 申请免费许可：https://www.jetbrains.com/student
+源码管理
+本课程的综合实验要求使用源代码管理工具——git。GitHub 是一个著名的开源软件与协作编程社区，因采用 git 而得名。所谓协作编程社区意即程序员交友网站，其特色在于提供团队协作、项目管理的功能。
+
+据说在操作系统课程中，大家已经用过 git 和 GitHub，我们假设大家有一定经验。初学者可阅读教程，中文的 git 教程首推：https://www.liaoxuefeng.com/
+
+对于课程作业来说，为避免代码公开引起抄袭等纠纷，我们要求使用私有仓库。GitHub 上的私有仓库一般需要付费，本课程提供两种免费获取私有仓库的方式，任选其一。推荐采用加入组织的方式。当然，自己氪金也是可以的
+方法一：加入组织
+ThssSE 是我们在 GitHub 上建立的一个组织（Organization）：https://github.com/thssse，THSS 指软件学院，SE 指软件工程。这个组织可不一般哟，加入这个组织即有权限创建私有仓库。
+
+请及时在网络学堂登记自己的 GitHub 账号，助教发送加入组织的邀请后，请及时确认。
+
+如使用在该组织名下创建的私有仓库，无需特别操作，老师和助教作为组织的管理员（Owner）可以直接查看你的代码。
+方法二：领取学生礼包
+https://education.github.com/，提交资料领取学生礼包，即获得创建私有仓库的权限。如使用自行创建的私有仓库，请加老师和助教为协作者（Collaborator），否则我们无法查看你的代码，只好给你零分了！
+构建工具
+HTML、CSS 和 JavaScript 和同学们熟悉的 C 语言不同，写好的代码可以直接运行在浏览器中，传统上并不需要编译、链接等统称为构建（Build）的过程。﻿那么，何来构建工具一说呢？
+
+随着 Web 前端技术的发展，一个项目依赖的库可能很多，依赖项本身还有依赖项，手工拷贝很不优雅，升级更麻烦。也有一些新出现的技术，为了能在旧的浏览器上运行，需要进行转译（如 ES6+ 到 ES5，TypeScript 到 JavaScript ）。为了节约流量、减少延迟，还常有压缩代码、合并小文件等操作。近年来兴起一套被称作“前端工程化”的方法，形成了工具链。著名的工具有 npm、bower、webpack 等。针对综合实验，我们推荐采用工程化的方法开发。
+线上部署
+本课程基础实验中的 Node.js 实验、综合实验要求在 Linux 服务器上部署，要求同学们对 LNMP 栈、Linux 运维常识有所了解。
+服务器和域名
+本课程为每位选课学生提供一台腾讯云的云服务器。有效期 1 个月，预计在第 2 周发放，能够覆盖本课程的全部教学环节，到综合实验评分完成时为止。如有作业迟交等特殊情况，请提前联系助教，进行租期延长的操作。
+
+按照监管要求，Web 应用在境内上线运行，域名需经政府有关部门备案。本课程为每位选课学生提供一个满足备案要求的域名，该域名指向相应的云服务器的公网 IP 地址（A 记录）。
+
+服务器 IP 地址、用户名、密码和域名将通过网络学堂的课程作业栏目下发。醒目：禁止使用课程提供的服务器和域名开展违反法律规定的活动。
+SSH 远程访问
+云服务器需要远程操作，通常使用的工具是 SSH。macOS（原 OS X）和 GNU/Linux 通常内置该功能，在自带终端中输入 ssh 即可使用。Windows 上可安装专门的软件，如著名的 PuTTY，上古风格的官网：https://www.chiark.greenend.org.uk/~sgtatham/putty/
+
+如果你使用较新版本的 Windows 10，我推荐使用其自带的 Linux 子系统——WSL。教程：https://zhuanlan.zhihu.com/p/24537874，到“可以开始使用了”处就够了；可执行各种 Linux 命令，如 ssh，scp，apt；众所周知，Windows 自带的命令提示符并不好用，所以还要再推荐一款终端模拟器，比如 wsltty（https://github.com/mintty/wsltty）。
+
+向服务器拷贝文件可使用 scp 命令。Windows 下图形界面的替代品有 WinSCP 等。
+搭建 LNMP 栈
+LNMP 是一个著名的术语，指部署 Web 应用所需的一系列软件。
+
+L：Linux
+操作系统。我们为同学们提供的云服务器已预装 Linux 操作系统，发行版为 Ubuntu。此项不提供选择，也无需同学操作。
+
+N：Nginx
+Web 服务器。常见的选择包括 Nginx 和 Apache HTTP Server（所以也有 LAMP 的说法）。我们这里推荐 Nginx，具有轻量、高并发支持、高度模块化设计的特点。一条命令即可安装：
+$ sudo apt install nginx
+其中 sudo 表示以超级用户（su = superuser）身份执行命令。
+
+安装完成后， Nginx 以后台服务的形式存在，可通过命令控制：
+$ service nginx status # 查看服务运行状态
+$ sudo service nginx start
+$ sudo service nginx stop
+$ sudo service nginx reload # 修改配置文件后无需 restart，执行 reload 即可生效
+如果配置成功，在浏览器通过域名访问你的服务器，应可看到“Welcome to nginx!”字样。这是一个 HTML 文件，位于 /var/www/html 目录下。
+$ ls /var/www/html/
+index.nginx-debian.html
+$ cat /var/www/html/index.nginx-debian.html
+...<html>...
+<h1>Welcome to nginx!</h1>
+...</html>
+使用 nginx 的主要姿势就是编写配置文件，默认在 /etc/nginx/conf.d目录下
+$ sudo nano /etc/nginx/conf.d
+如以下片段，可指示 nginx 将访问“/”的请求转发至本地 8080 端口。
+location / {
+    proxy_pass http://localhost:8080;
+}
+有教程介绍用 nginx 部署 Node.js 应用的方法，拓展阅读：https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04
+
+M：数据库
+一般用不到，可跳过。若你的游戏需要数据的存储（如“排行榜”功能），特别是持久化存储，则可选用数据库。常见的选择包括针对结构化数据的 MySQL、针对非结构化数据的 MongoDB、针对键值对数据高速缓存的 Redis 等。MariaDB 则是开源社区维护的 MySQL 的一个分支，与 MySQL 几乎完全兼容。
+
+P：PHP
+程序设计语言，包括其解释器等软件。本课程的实验并不使用 PHP，而是使用 JavaScript，此项以 Node.js 代替。
+证书
+现代的 Web 应用对安全性的一条基本要求是采用 HTTPS 协议（而不是 HTTP）。苹果已于 2017 年 1 月起要求在 App Store 上架的 iOS 应用必须使用 HTTPS。微信小程序、小游戏也有类似要求。2018 年 7 月起，Google Chrome 将开始针对任何 HTTP 网页向用户显示“不安全”字样。
+
+本课程提供域名，但不提供证书。若要配置 HTTPS，需为域名申请证书。获得证书后，还需要配置 nginx 使用该证书。这里推荐自动申请证书的方式，教程：https://nmchgx.com/acme-https/，此文中的 www.nmchgx.com 替换为我们提供的子域名，此文中的 nmchgx.com 忽略。
+产品发布
+课程综合实验的任务是使用现代 Web 前端技术开发一款游戏（或称 H5 游戏，指使用 HTML5 等技术）。我们要求将游戏在微信公众平台上作为一个“小游戏”发布，在微信 App 中运行。（“发布”未必是正式发布版本，也可以是“体验版”。若是体验版，则需要在后台为助教和老师添加“体验者”权限。）
+
+文档入口是：https://developers.weixin.qq.com/minigame/dev/
+
+开发、调试过程中有时需要模拟手机上微信 App 中的运行环境。微信提供相应的工具——“微信开发者工具”，另文介绍。游戏开发用到的框架或引擎有时还有特定的工具，另文介绍。
+
+（完）
+
+（如有疑问请找助教，本文根据大家的反馈随时更新）

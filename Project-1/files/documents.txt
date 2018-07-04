@@ -1,0 +1,5 @@
+Sequence number	Heading	Brief explanation	Size of the file	Uploading time	状态
+1	课程简介		0.97M	2018-07-01	
+2	第1讲：前端与HTML		2.6M	2018-07-01	
+3	第2讲：CSS		2.62M	2018-07-01	
+999	基础实验2相关文件		29.97M	2018-07-02	new file
